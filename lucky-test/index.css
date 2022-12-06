@@ -1,0 +1,84 @@
+/*fonts*/
+@font-face {
+  font-family: Poppins-regular;
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Poppins-medium;
+  src: url(./assets/fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: Roboto-regular;
+  src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Poppins-Mixed;
+  src: url(./assets/fonts/Roboto-Thin.ttf);
+}
+
+/*variables*/
+:root {
+  --green-bg-color: #ecf7f3;
+  --padding-desktop: 30px 100px;
+  --green-color: #48b774;
+  --orange-color: #fd905a;
+  --grey-color: #707070;
+  --grey-font-color: #4a4a4a;
+  --white-font-color: #ffffff;
+}
+/*reset styles*/
+body {
+  margin: 0;
+}
+button {
+  border: none;
+  outline: none;
+}
+ul{
+    margin: 0;
+}
+/*header styles*/
+.header {
+  margin: 0 auto;
+  background-color: var(--green-bg-color);
+  padding: var(--padding-desktop);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav_list {
+  font-family: Poppins-regular, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  display: flex;
+  gap: 30px;
+}
+.header__nav_item {
+  list-style: none;
+  padding-bottom: 3px;
+  position: relative;
+  color: var(--grey-font-color);
+}
+.header__nav_item:hover::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 21px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: -10px;
+  border-bottom: 1.5px solid var(--orange-color);
+}
+.header__sign-button {
+    font-family: Poppins-Medium, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: var(--green-color);
+  border-radius: 20px;
+  width: 108px;
+  height: 42px;
+  color: var(--white-font-color);
+}
+/*section hero styles*/
