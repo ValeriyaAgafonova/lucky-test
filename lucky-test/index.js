@@ -63,3 +63,22 @@ function toggleMenu() {
   headerNav.style.height = isMenuOpen ? "0px" : navList.offsetHeight + "px";
   isMenuOpen = !isMenuOpen;
 }
+
+
+//ajax 
+const underHeading = document.querySelector('.hero__underheading')
+const requestURL = 'https://baconipsum.com/api/?type=lucky'
+const xhr = new XMLHttpRequest();
+xhr.open('GET', requestURL);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState !== 4 || xhr.status !== 200) {
+    return;
+  }
+  const response = xhr.response;
+  const responseArray = JSON.parse(response);
+  const randomText = Math.floor(Math.random() * (5 - 0) + 0);
+console.log(randomText)
+  underHeading.textContent = responseArray[randomText]
+
+}
+xhr.send();
