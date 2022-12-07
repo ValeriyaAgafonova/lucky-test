@@ -323,6 +323,9 @@ button {
   .hero {
     padding: var(--padding-mobile);
   }
+  .hero__left-side{
+    background-color: rgba(236,247,243, 0.7);
+  }
 }
 @media (max-width: 728px) {
   .header__burger {
