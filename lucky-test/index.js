@@ -19,3 +19,32 @@ searchInput.addEventListener("input", function () {
     tooltip.style.opacity = "0";
   }
 });
+
+
+let flagsCircle = document.querySelector('.hero__animation-circle')
+let flags = Array.from(document.getElementsByClassName('hero__animation-flag'));
+const body = document.querySelector('body')
+document.addEventListener("DOMContentLoaded", function(){
+
+flags.forEach(function(flag, index){
+    setTimeout(function(){
+       timer(flag, index);
+    }, 400 * ++index)
+ });
+
+setTimeout(function(){
+    infinite();
+ }, 4000);
+})
+
+function infinite(){
+    flagsCircle.classList.add('infinite')
+}
+
+function timer(flag, index){
+    flag.classList.remove('center-position')
+    flag.classList.add(`flag-${index}`)
+
+}
+
+

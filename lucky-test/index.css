@@ -99,6 +99,11 @@ button {
 .hero {
   background-color: var(--green-bg-color);
   padding: var(--padding-desktop);
+  position: relative;
+}
+.hero__left-side{
+    position: relative;
+    z-index: 5;
 }
 .hero__heading {
   color: var(--black-font-color);
@@ -212,4 +217,67 @@ button {
     font-family: Roboto-regular, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-left: 80px;
     color: var(--grey-color);
+}
+.hero__animation-complex{
+    z-index: 4;
+    width: 600px;
+    top: 0;
+    position: absolute;
+    right: 0;
+    height: 680px;
+}
+.hero__animation-round{
+    position: absolute;
+  top: 220px;
+  left: 140px;
+}
+.hero__animation-girl{
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+}
+.hero__animation-circle{
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #E8E8E8;
+    top: 50px;
+    left: 40px;
+}
+.infinite{
+    animation: circle 5s infinite linear;
+
+}
+.hero__animation-flag{
+    position: absolute;    
+    transition: all 2s;
+}
+.center-position{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.flag-1{
+    left: -50px;
+    top: 200px;
+}
+.flag-2{
+    left: -30px;
+    top: 50px;
+}
+.flag-3{
+    left: 200px;
+    top: -50px;
+}
+.flag-4{
+    right: 10px;
+    top: 20px;
+}
+@keyframes circle { 
+    to { transform: rotate(1turn); }
+}
+.flag-5{
+    right: -50px;
+    top: 200px; 
 }
