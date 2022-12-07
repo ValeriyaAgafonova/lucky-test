@@ -57,11 +57,14 @@ burger.addEventListener("click", toggleMenu);
 const menuItems = Array.from(document.querySelectorAll(".header__nav_item"));
 menuItems.forEach((item) => item.addEventListener("click", toggleMenu));
 function toggleMenu() {
+    if (window.innerWidth <= 728){
   burger.classList.toggle("is-active");
   burger.classList.toggle("burger-x");
-  headerNav.classList.toggle("open");
-  headerNav.style.height = isMenuOpen ? "0px" : navList.offsetHeight + "px";
-  isMenuOpen = !isMenuOpen;
+    headerNav.classList.toggle("open");
+    headerNav.style.height = isMenuOpen ? "0px" : navList.offsetHeight + "px";
+    isMenuOpen = !isMenuOpen;
+  }
+ 
 }
 
 
