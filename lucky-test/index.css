@@ -350,3 +350,27 @@ button {
     width: 100%;
   }
 }
+@media (max-width: 620px) {
+    .hero__animation-complex{
+        display: none;
+    }
+    .hero__search-form{
+        width: 100%;
+    }
+    .hero__heading,
+    .hero__subheading{
+        font-size: 32px;
+        width: 90%;
+    }
+    .hero__heading{
+        margin-top: 0;
+      
+    }
+    .hero__underheading{
+        word-wrap: break-word;
+        width: 90%;
+    }
+    .header__logo{
+    width: 100px;
+    }
+}
