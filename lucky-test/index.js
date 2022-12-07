@@ -77,8 +77,6 @@ xhr.onreadystatechange = function() {
   const response = xhr.response;
   const responseArray = JSON.parse(response);
   const randomText = Math.floor(Math.random() * (5 - 0) + 0);
-console.log(randomText)
   underHeading.textContent = responseArray[randomText]
-
 }
 xhr.send();
