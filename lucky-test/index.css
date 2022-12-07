@@ -32,6 +32,7 @@
   --black-font-color: #2d2d2d;
   --orange-font-color: #ff8345;
   --grey-font-color: #7c7c7c;
+  --padding-mobile: 30px 30px;
 }
 /*reset styles*/
 body,
@@ -65,6 +66,37 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header__burger {
+  display: none;
+}
+.header__line {
+  width: 30px;
+  height: 2px;
+  background-color: var(--orange-color);
+  display: block;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.header__burger.is-active .header__line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger.is-active .header__line:nth-child(1) {
+  -webkit-transform: translateY(7px) rotate(45deg);
+  -ms-transform: translateY(7px) rotate(45deg);
+  -o-transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__burger.is-active .header__line:nth-child(3) {
+  -webkit-transform: translateY(-7px) rotate(-45deg);
+  -ms-transform: translateY(-7px) rotate(-45deg);
+  -o-transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 .header__nav_list {
   font-family: Poppins-regular, Cambria, Cochin, Georgia, Times,
@@ -101,9 +133,9 @@ button {
   padding: var(--padding-desktop);
   position: relative;
 }
-.hero__left-side{
-    position: relative;
-    z-index: 5;
+.hero__left-side {
+  position: relative;
+  z-index: 5;
 }
 .hero__heading {
   color: var(--black-font-color);
@@ -157,127 +189,164 @@ button {
 .hero__search-input::-webkit-input-placeholder {
   color: #a1a1a1;
 }
-.hero__search-form{
-    position: relative;
-    width: 55%;
-    margin-bottom: 40px;
+.hero__search-form {
+  position: relative;
+  width: 55%;
+  margin-bottom: 40px;
 }
-.hero__search-button{
-   border-radius: 50%;
-   width: 55px;
-   height: 55px;
-   position: absolute;
+.hero__search-button {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  position: absolute;
   right: 5px;
   top: 3px;
 }
-.hero__search-icon{
-    margin-top: 2px;
+.hero__search-icon {
+  margin-top: 2px;
 }
-.hero__tooltip{
-    opacity: 0;
-    font-family: Roboto-Mixed, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: red;
+.hero__tooltip {
+  opacity: 0;
+  font-family: Roboto-Mixed, Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+  color: red;
 }
-.hero__users{
-    display: flex;
-    align-items: center;
+.hero__users {
+  display: flex;
+  align-items: center;
 }
-.hero__users-list{
-    position: relative;
+.hero__users-list {
+  position: relative;
 }
-.hero__user{
-    position: absolute;
+.hero__user {
+  position: absolute;
 }
-.hero__user:first-child{
-    z-index: 3;
+.hero__user:first-child {
+  z-index: 3;
 }
-.hero__user:nth-child(0n + 2){
-    left: 20px;
-    z-index: 2;
+.hero__user:nth-child(0n + 2) {
+  left: 20px;
+  z-index: 2;
 }
-.hero__user:nth-child(0n + 3){
-    left: 40px;
-    z-index: 1;
+.hero__user:nth-child(0n + 3) {
+  left: 40px;
+  z-index: 1;
 }
-.hero__user:last-child{
-    position: relative;
-    left: 60px;
-    order: 0;
-    width: 38px;
-    height: 38px;
+.hero__user:last-child {
+  position: relative;
+  left: 60px;
+  order: 0;
+  width: 38px;
+  height: 38px;
 }
-.hero__user-plus{
-    position: absolute;
-    top: 3px;
-    left: 14px;
-    font-size: 26px;
-    color: white;
+.hero__user-plus {
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  font-size: 26px;
+  color: white;
 }
-.hero__users-text{
-    font-family: Roboto-regular, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-left: 80px;
-    color: var(--grey-color);
+.hero__users-text {
+  font-family: Roboto-regular, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  margin-left: 80px;
+  color: var(--grey-color);
 }
-.hero__animation-complex{
-    z-index: 4;
-    width: 600px;
-    top: 0;
-    position: absolute;
-    right: 0;
-    height: 680px;
+.hero__animation-complex {
+  z-index: 4;
+  width: 600px;
+  top: 0;
+  position: absolute;
+  right: 0;
+  height: 680px;
+  overflow-y: hidden;
 }
-.hero__animation-round{
-    position: absolute;
+.hero__animation-round {
+  position: absolute;
   top: 220px;
   left: 140px;
 }
-.hero__animation-girl{
-    position: absolute;
-    right: -100px;
-    bottom: 0;
+.hero__animation-girl {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
 }
-.hero__animation-circle{
-    width: 480px;
-    height: 480px;
-    position: absolute;
-    border-radius: 50%;
-    border: 2px solid #E8E8E8;
-    top: 50px;
-    left: 40px;
+.hero__animation-circle {
+  width: 480px;
+  height: 480px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #e8e8e8;
+  top: 50px;
+  left: 40px;
 }
-.infinite{
-    animation: circle 5s infinite linear;
+.infinite {
+  animation: circle 5s infinite linear;
+}
+.hero__animation-flag {
+  position: absolute;
+  transition: all 2s;
+}
+.center-position {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.flag-1 {
+  left: -50px;
+  top: 200px;
+}
+.flag-2 {
+  left: -30px;
+  top: 50px;
+}
+.flag-3 {
+  left: 200px;
+  top: -50px;
+}
+.flag-4 {
+  right: 10px;
+  top: 20px;
+}
+@keyframes circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.flag-5 {
+  right: -50px;
+  top: 200px;
+}
 
+@media (max-width: 880px) {
+  .header,
+  .hero {
+    padding: var(--padding-mobile);
+  }
 }
-.hero__animation-flag{
-    position: absolute;    
-    transition: all 2s;
-}
-.center-position{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.flag-1{
-    left: -50px;
-    top: 200px;
-}
-.flag-2{
-    left: -30px;
-    top: 50px;
-}
-.flag-3{
-    left: 200px;
-    top: -50px;
-}
-.flag-4{
-    right: 10px;
-    top: 20px;
-}
-@keyframes circle { 
-    to { transform: rotate(1turn); }
-}
-.flag-5{
-    right: -50px;
-    top: 200px; 
+@media (max-width: 728px) {
+  .header__burger {
+    display: block;
+  }
+  .header__nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all 1s;
+    padding-right: 30px;
+    background-color: var(--green-bg-color);
+  }
+  .open {
+    z-index: 100;
+    padding-bottom: 30px;
+  }
+  .header__nav_list {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__nav_item:hover::after {
+    width: 100%;
+  }
 }
